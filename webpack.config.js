@@ -10,7 +10,7 @@ const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
     entry: {
-        cookieOperator: './src/cookieOperator.js'
+        cookieOperator: './src/cookie_operator.js'
     },
     output: {
         path: resolve('dist'), // 输出目录
@@ -45,7 +45,7 @@ module.exports = {
                 parallel: true,
                 uglifyOptions: {
                     compress: {
-                        warnings: false
+                        // warnings: false
                     },
                     mangle: true
                 },
