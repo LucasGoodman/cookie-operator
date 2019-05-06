@@ -38,7 +38,7 @@ class CookieOperator {
      * @param {string} value - cookie的值.
      * @param {Object} attributes - 参数对象.
      */
-    set(key, value, attributes) {
+    set(key, value, attributes = {}) {
         let { expires, path } = attributes;
         // 0.转义
         let _key = encodeURIComponent(String(key));
@@ -76,7 +76,7 @@ class CookieOperator {
      * @param {string} value - cookie的值.
      * @param {Object} attributes - 参数对象.
      */
-    remove(key, attributes) {
+    remove(key, attributes = {}) {
         let value = '';
         return this.set(key, value, Object.assign(attributes, {
             expires: -1

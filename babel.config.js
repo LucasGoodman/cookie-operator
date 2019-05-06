@@ -1,8 +1,8 @@
-{
-    "presets": [
+module.exports = {
+    presets: [
         "@babel/preset-env"
     ],
-    "plugins": [
+    plugins: [
         "@babel/transform-runtime"
     ]
-}
+};
