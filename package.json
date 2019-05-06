@@ -1,0 +1,42 @@
+{
+    "name": "cookie-operator",
+    "version": "1.0.0",
+    "description": "a javascript handler for browser cookie",
+    "main": "src/cookie_operator.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "dev": "NODE_ENV=development webpack --config webpack.config.js --mode=development -w",
+        "build": "NODE_ENV=production webpack --config webpack.config.js --mode=production",
+        "lint": "eslint ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/LucasGoodman/cookie-operator.git"
+    },
+    "keywords": [
+        "javasrcipt",
+        "cookie"
+    ],
+    "author": "realucas",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/LucasGoodman/cookie-operator/issues"
+    },
+    "homepage": "https://github.com/LucasGoodman/cookie-operator#readme",
+    "devDependencies": {
+        "ava": "^1.4.1",
+        "babel-core": "^6.26.3",
+        "babel-loader": "^8.0.5",
+        "babel-plugin-transform-runtime": "^6.23.0",
+        "babel-preset-env": "^1.7.0",
+        "eslint": "^5.16.0",
+        "eslint-friendly-formatter": "^4.0.1",
+        "eslint-loader": "^2.1.2",
+        "nyc": "^14.1.0",
+        "uglifyjs-webpack-plugin": "^2.1.2",
+        "webpack": "^4.30.0",
+        "webpack-cli": "^3.3.2"
+    }
+}

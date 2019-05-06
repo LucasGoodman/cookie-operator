@@ -87,7 +87,7 @@ class CookieOperator {
      * 删除某个cookie的值.
      * @param {string} keys - cookie的名字.
      */
-    clearAll(keys = []) {
+    removeAll(keys = []) {
         keys.forEach(name => {
             this.remove(name);
         });

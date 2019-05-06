@@ -1,0 +1,14 @@
+{
+    "presets": [
+        "env"
+    ],
+    "plugins": [
+        [
+            "transform-runtime",
+            {
+                "helpers": false,
+                "polyfill": false
+            }
+        ]
+    ]
+}
