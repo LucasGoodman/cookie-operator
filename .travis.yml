@@ -9,19 +9,11 @@ node_js:
   - 10
   - 8
   - 6
-matrix:
-  ## An ENOMEM error occurs with 11.6.0 under Travis-CI for Windows.
-  ## Disable until we can determine the cause.
-  #  include:
-  #    - os: windows
-  #      node_js: "latest"
-  exclude:
-    - os: windows
-      node_js: "node"
-git:
-  depth:
-    1
-
-after_script:
-  - "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
+after_success: npm run report:coverage
+env:
+  global:
+    secure:
+      0GB5vJsEXKEIrj323xIhDB4t6D87ySMkIkQJcZWvYqFdD5QrK3ZCDpO8477llUm5tkiCMqzQosc9djYccmlGqnFQdrJdHxjmBL6Cfjx0dsRQhG/EtJEYMgx2Nd3dKVky99gHwLCdnhYnyU1AAhIDD635f74WtaYbqgejGPYlaip/sUHFRonk3aNHYAr/jtoEnCuyB2FNTwpSoLbla2uqqcfpJFxUxi
+      RjWSh4aT3sG9uF8al0nbhGiQPB47JO9rzU6h3tMjVrFx+uJ/Lqwgj6lWDQMkaBkRpKwd0NF4+WNx4ReLYsR96TSxbCIMD7PZV3D0lQdO96c68LdajHam3TOmW8oZo2kdLwZtzxJW+NiRRfLOczizgdzTTsnwX95D86oGakvO17LReU1/UGBe0JfYa2X912FvENlvof8JimAMllvSt7W5F0bGaY3EukV+KnggqmVZJ
+      UeEdGfcOkvCpg5JosGc5UsqFkgCJwGjIdUmvs4L8xRyhu2YVUP1y+ImXjjPNnfZxBxXIRY11pq6R74AqYgCcgl2wSDROJUX9zHCNDtwMfVyqePdWqfE3UVooypsWTupve2WGqZJRjkGWeYMmFBC1zbCeC3W6WRYqBu6x3vljqEDKM0bBdu5iRZNJ3XDCsIKEVbKMrK0VXFo7r3PY/UoHT19o5+kj/x02laaw=
 
