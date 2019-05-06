@@ -16,5 +16,7 @@ yarn-error.log*
 *.sln
 *.sw*
 
-coverage
+/coverage
+coverage.*
 .nyc_output
+process.env.CODECOV_TOKEN

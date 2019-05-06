@@ -13,7 +13,7 @@
         "test": "npm run lint && nyc ava",
         "test:watch": "cross-env NODE_ENV=development ava --watch",
         "report:html": "nyc report --reporter=html",
-        "report:coverage": "nyc report --reporter=text-lcov | coveralls"
+        "report:codecov": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
     },
     "repository": {
         "type": "git",
@@ -43,7 +43,7 @@
         "ava": "^1.4.1",
         "babel-loader": "^8.0.5",
         "browser-env": "^3.2.6",
-        "coveralls": "^3.0.3",
+        "codecov": "^3.3.0",
         "cross-env": "^5.2.0",
         "eslint": "^5.16.0",
         "eslint-friendly-formatter": "^4.0.1",
