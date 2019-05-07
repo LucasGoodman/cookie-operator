@@ -28,7 +28,11 @@ class CookieOperator {
         while ((result = pattern.exec(cookie)) != null) {
             value[result[1]] = result[2];
         }
-        return decodeURIComponent(value[_key]);
+        if (key) {
+            return decodeURIComponent(value[_key]);
+        } else {
+            return value;
+        }
     }
 
     /**
@@ -46,7 +50,10 @@ class CookieOperator {
         if (typeof expires === 'number') {
             let _expires = new Date();
             _expires.setMilliseconds(_expires.getMilliseconds() + expires * 864e+5);
+            console.log('_expires', _expires)
             attributes.expires = _expires.toGMTString();
+        } else if (expires instanceof Date) {
+            attributes.expires = expires.toGMTString();
         } else {
             attributes.expires = '';
         }

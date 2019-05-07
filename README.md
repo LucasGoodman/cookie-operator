@@ -38,7 +38,14 @@ cookieOperator.set('name', 'value',{ expires:30, path:'', domain:document.domain
 
 Read cookie:
 
+```javascript
+cookieOperator.set('name', 'value');
+cookieOperator.set('name2', 'value2');
+
+cookieOperator.get(); // => {name:"value";name2:'value2'}
 ```
+
+```javascript
 cookieOperator.get('name'); // => 'value'
 ```
 
@@ -91,8 +98,9 @@ For more information on the properties of cookies, please refer to [Document.coo
 
 
 **expires**
+Define when the cookie will be removed. 
 
-**Default:** Cookie is removed when the user closes the browser.
+**Default:** Cookie is removed when the user closes the browser.If the value is a `Number`, the deleted date will be the number of days after the creation time; if it is a date object, the deleted time will be the time represented by the date object.
 
 **Examples:**
 ```javascript
