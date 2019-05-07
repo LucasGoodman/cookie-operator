@@ -8,15 +8,13 @@ const resolve = dir => path.join(__dirname, '.', dir);
 
 const isProd = process.env.NODE_ENV === 'production';
 
-const packageInfo = require('./package.json');
-
 module.exports = {
     entry: {
         cookieOperator: './src/cookie_operator.js'
     },
     output: {
         path: resolve('dist'), // 输出目录
-        filename: `[name].${packageInfo.version}.js`, // 输出文件
+        filename: `[name].mini.js`, // 输出文件
         libraryTarget: 'umd', // 采用通用模块定义
         library: 'cookieOperator', // 库名称
         libraryExport: 'default', // 兼容 ES6(ES2015) 的模块系统、CommonJS 和 AMD 模块规范
