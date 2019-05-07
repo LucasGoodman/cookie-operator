@@ -1,6 +1,6 @@
 {
     "name": "cookie-operator",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "a javascript handler for browser cookie",
     "main": "src/cookie_operator.js",
     "directories": {
