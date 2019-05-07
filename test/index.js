@@ -53,6 +53,8 @@ test('Branch coverage test', t => {
     let date = new Date(new Date().getTime() + 3 * 864e+5);
     cookieOperator.set('testCookieName', 'testCookieValue', { expires: date, domain, path, secure: false })
     t.is(cookieOperator.get('testCookieName'), 'testCookieValue');
+    // 分支覆盖：checkAll传入参数为空
+    t.is(cookieOperator.checkAll(), false);
 });
 
 test('Domain test', t => {

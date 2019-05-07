@@ -6,6 +6,9 @@ class CookieOperator {
     * 检测一组cookie是否都存在
     * */
     checkAll(keys = []) {
+        if (Object.keys(keys).length === 0) {
+            return false
+        }
         let loseCookie = false; // 缺少某个cookie
         keys.forEach(name => {
             if (this.get(name) === 'undefined') {
