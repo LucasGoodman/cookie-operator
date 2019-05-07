@@ -7,11 +7,10 @@ class CookieOperator {
     * */
     checkAll(keys = []) {
         let loseCookie = false; // 缺少某个cookie
-        keys.map(name => {
-            if (typeof this.get(name) === 'undefined') {
+        keys.forEach(name => {
+            if (this.get(name) === 'undefined') {
                 loseCookie = true;
             }
-            return null;
         });
         return !loseCookie;
     }
@@ -73,7 +72,6 @@ class CookieOperator {
     /**
      * 删除某个cookie的值.
      * @param {string} key - cookie的名字.
-     * @param {string} value - cookie的值.
      * @param {Object} attributes - 参数对象.
      */
     remove(key, attributes = {}) {
@@ -96,10 +94,10 @@ class CookieOperator {
     /**
      * 获取主域名地址.
      */
-    getPrimaryDomain() {
-        let domain = document.domain;
+    getPrimaryDomain(domain) {
+        let _domain = domain || document.domain;
         // 删除三级域名
-        return domain.substring(domain.length, domain.lastIndexOf('.', domain.lastIndexOf('.') - 1) + 1);
+        return _domain.substring(_domain.length, _domain.lastIndexOf('.', _domain.lastIndexOf('.') - 1) + 1);
     }
 }
 
