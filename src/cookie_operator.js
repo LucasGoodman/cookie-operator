@@ -67,6 +67,7 @@ class CookieOperator {
             stringifiedAttributes += '=' + attributes[attributeName];
         }
         document.cookie = _key + '=' + _value + stringifiedAttributes;
+        return document.cookie
     }
 
     /**
