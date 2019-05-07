@@ -90,7 +90,7 @@ cookieOperator.getPrimaryDomain('www.test2.com') // 'test2.com'
 ```
 
 
-*重要！* 除非您依赖于[Cookie默认属性](#CookieAttributes)，否则在删除cookie时，必须传递用于设置cookie的完全相同的路径和域属性。
+*注意！* 除非您依赖于[Cookie默认属性](#CookieAttributes)，否则在删除cookie时，必须传递用于设置cookie的完全相同的路径和域属性。
 
 ## [Cookie属性](#CookieAttributes)
 
@@ -98,6 +98,7 @@ cookieOperator.getPrimaryDomain('www.test2.com') // 'test2.com'
 
 
 **expires**
+
 这个值决定了cookie在设置后，什么时候被删除。如果值类型为 `Number`，则删除的日期将是创建时间加上这个天数;如果是日期对象，则删除的时间将是日期对象表示的时间。
 
 **默认值：** cookie会在浏览器被关闭的时候删除
