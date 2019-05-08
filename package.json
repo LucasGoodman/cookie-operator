@@ -9,6 +9,7 @@
     "scripts": {
         "dev": "cross-env NODE_ENV=development webpack --config webpack.config.js --mode=development -w",
         "build": "cross-env NODE_ENV=production webpack --config webpack.config.js --mode=production",
+        "doc": "node jsdoc.js",
         "lint": "eslint .",
         "test": "npm run lint && nyc ava",
         "test:watch": "cross-env NODE_ENV=development ava --watch",
@@ -49,6 +50,8 @@
         "eslint": "^5.16.0",
         "eslint-friendly-formatter": "^4.0.1",
         "eslint-loader": "^2.1.2",
+        "jsdoc": "^3.6.1",
+        "jsdoc-to-markdown": "^4.0.1",
         "nyc": "^14.1.0",
         "uglifyjs-webpack-plugin": "^2.1.2",
         "webpack": "^4.30.0",

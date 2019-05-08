@@ -31,6 +31,18 @@ test.serial('Check/RemoveAll test', t => {
     t.is(cookieOperator.checkAll(testArr), false);
 });
 
+test('create/getAttr test', t => {
+    let testAttr = {
+        expires: 1,
+        domain: 'test.com',
+        path: '/a',
+        secure: true
+    };
+    let _cookieOperator = cookieOperator.create(testAttr)
+    t.deepEqual(_cookieOperator.getAttr(), testAttr);
+
+});
+
 test('getAll test', t => {
     // 获取全部的cookie测试
     cookieOperator.set('key1', 'value1');
@@ -58,7 +70,7 @@ test('Branch coverage test', t => {
 });
 
 test('Domain test', t => {
-    t.is(cookieOperator.getPrimaryDomain('www.test.com'), 'test.com');
-    t.is(cookieOperator.getPrimaryDomain('name1.name2.test.com'), 'test.com');
+    t.is(cookieOperator.getPrimaryDomain('test.com'), 'test.com');
+    t.is(cookieOperator.getPrimaryDomain('test.com'), 'test.com');
     t.is(cookieOperator.getPrimaryDomain('test.com'), 'test.com');
 });

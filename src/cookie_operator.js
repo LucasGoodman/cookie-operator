@@ -1,10 +1,35 @@
 /**
- * Created by Lucas on 2019/5/6.
+ * @author Lucas
+ * @description 一个操作cookie的类
  */
 class CookieOperator {
-    /*
-    * 检测一组cookie是否都存在
-    * */
+    /**
+     * 创建一个实例
+     * @param {Object} [attributes] - 参数对象.
+     */
+    constructor(attributes = {}) {
+        this.attributes = attributes
+    }
+
+    /**
+     * 使用自定义参数对象创建一个实例
+     * @param {Object} [attribute] - 实例参数对象.
+     * */
+    create(attribute) {
+        return new CookieOperator(attribute)
+    }
+
+    /**
+     * 获取当前实例的参数
+     * */
+    getAttr() {
+        return this.attributes
+    }
+
+    /**
+     * 检测一组cookie是否都存在
+     * @param {string} keys - cookie名字数组.
+     * */
     checkAll(keys = []) {
         if (Object.keys(keys).length === 0) {
             return false
@@ -42,9 +67,10 @@ class CookieOperator {
      * 设置某个cookie的值.
      * @param {string} key - cookie的名字.
      * @param {string} value - cookie的值.
-     * @param {Object} attributes - 参数对象.
+     * @param {Object} [attributes] - 参数对象.
+     * @return {String} 当前文档的cookie字符串
      */
-    set(key, value, attributes = {}) {
+    set(key, value, attributes = this.attributes) {
         let { expires, path } = attributes;
         // 0.转义
         let _key = encodeURIComponent(String(key));
@@ -82,9 +108,9 @@ class CookieOperator {
     /**
      * 删除某个cookie的值.
      * @param {string} key - cookie的名字.
-     * @param {Object} attributes - 参数对象.
+     * @param {Object} [attributes] - 参数对象.
      */
-    remove(key, attributes = {}) {
+    remove(key, attributes = this.attributes) {
         let value = '';
         return this.set(key, value, Object.assign(attributes, {
             expires: -1
@@ -92,17 +118,19 @@ class CookieOperator {
     }
 
     /**
-     * 删除某个cookie的值.
-     * @param {string} keys - cookie的名字.
+     * 删除一组cookie的值.
+     * @param {string} keys - cookie名字数组.
+     * @param {Object} [attributes] - 参数对象.
      */
-    removeAll(keys = []) {
+    removeAll(keys = [], attributes = this.attributes) {
         keys.forEach(name => {
-            this.remove(name);
+            this.remove(name, attributes);
         });
     }
 
     /**
      * 获取主域名地址.
+     * @param {string} [domain] - 需要处理的域名.
      */
     getPrimaryDomain(domain) {
         let _domain = domain || document.domain;
