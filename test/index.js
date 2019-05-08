@@ -70,7 +70,7 @@ test('Branch coverage test', t => {
 });
 
 test('Domain test', t => {
-    t.is(cookieOperator.getPrimaryDomain('test.com'), 'test.com');
-    t.is(cookieOperator.getPrimaryDomain('test.com'), 'test.com');
-    t.is(cookieOperator.getPrimaryDomain('test.com'), 'test.com');
+    t.is(cookieOperator.getTopDomain('test.com'), 'test.com');
+    t.is(cookieOperator.getTopDomain('test.com'), 'test.com');
+    t.is(cookieOperator.getTopDomain('test.com'), 'test.com');
 });

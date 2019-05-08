@@ -10,7 +10,7 @@
         "dev": "cross-env NODE_ENV=development webpack --config webpack.config.js --mode=development -w",
         "build": "cross-env NODE_ENV=production webpack --config webpack.config.js --mode=production",
         "doc": "node jsdoc.js",
-        "lint": "eslint .",
+        "lint": "eslint ./src/cookie_operator.js",
         "test": "npm run lint && nyc ava",
         "test:watch": "cross-env NODE_ENV=development ava --watch",
         "report:html": "nyc report --reporter=html",
