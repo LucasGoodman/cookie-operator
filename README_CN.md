@@ -30,13 +30,13 @@ Translations: [English](https://github.com/LucasGoodman/cookie-operator/blob/mas
 
 ## [使用](#BasicUsage)
 
-创建一个整个站点都可以用访问的cookie:
+创建一个当前站点可以用访问的cookie:
 
 ```javascript
 cookieOperator.set('name', 'value');
 ```
 
-创建一个整个站点都可以用访问且有效期为30天的cookie:
+创建一个当前站点可以访问且有效期为30天的cookie:
 
 ```javascript
 cookieOperator.set('name', 'value',{ expires:30, path:'', domain:document.domain});
