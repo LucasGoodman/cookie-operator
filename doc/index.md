@@ -13,103 +13,103 @@
     * [.set(key, value, [attributes])](#CookieOperator+set) ⇒ <code>String</code>
     * [.remove(key, [attributes])](#CookieOperator+remove)
     * [.removeAll(keys, [attributes])](#CookieOperator+removeAll)
-    * [.getPrimaryDomain([domain])](#CookieOperator+getPrimaryDomain)
+    * [.getTopDomain([domain])](#CookieOperator+getTopDomain)
 
 <a name="new_CookieOperator_new"></a>
 
 ### new CookieOperator([attributes])
-一个操作cookie的类
+a class that manipulates cookies
 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [attributes] | <code>Object</code> | 参数对象. |
+| [attributes] | <code>Object</code> | Parameter object. |
 
 <a name="CookieOperator+create"></a>
 
 ### cookieOperator.create([attribute])
-使用自定义参数对象创建一个实例
+Create an instance with a custom parameter object
 
 **Kind**: instance method of [<code>CookieOperator</code>](#CookieOperator)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [attribute] | <code>Object</code> | 实例参数对象. |
+| [attribute] | <code>Object</code> | parameter object. |
 
 <a name="CookieOperator+getAttr"></a>
 
 ### cookieOperator.getAttr()
-获取当前实例的参数
+Get the parameters of the current instance
 
 **Kind**: instance method of [<code>CookieOperator</code>](#CookieOperator)  
 <a name="CookieOperator+checkAll"></a>
 
 ### cookieOperator.checkAll(keys)
-检测一组cookie是否都存在
+Check if a set of cookies are present
 
 **Kind**: instance method of [<code>CookieOperator</code>](#CookieOperator)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| keys | <code>string</code> | cookie名字数组. |
+| keys | <code>string</code> | cookies keys. |
 
 <a name="CookieOperator+get"></a>
 
 ### cookieOperator.get(key)
-读取某个cookie的值.
+Get the value of a cookie.
 
 **Kind**: instance method of [<code>CookieOperator</code>](#CookieOperator)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| key | <code>string</code> | cookie的名字. |
+| key | <code>string</code> | cookie name. |
 
 <a name="CookieOperator+set"></a>
 
 ### cookieOperator.set(key, value, [attributes]) ⇒ <code>String</code>
-设置某个cookie的值.
+Set the value of a cookie.
 
 **Kind**: instance method of [<code>CookieOperator</code>](#CookieOperator)  
-**Returns**: <code>String</code> - 当前文档的cookie字符串  
+**Returns**: <code>String</code> - The current document's cookie string.  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| key | <code>string</code> | cookie的名字. |
-| value | <code>string</code> | cookie的值. |
-| [attributes] | <code>Object</code> | 参数对象. |
+| key | <code>string</code> | cookie name. |
+| value | <code>string</code> | cookie value. |
+| [attributes] | <code>Object</code> | parameter object. |
 
 <a name="CookieOperator+remove"></a>
 
 ### cookieOperator.remove(key, [attributes])
-删除某个cookie的值.
+Delete a cookie.
 
 **Kind**: instance method of [<code>CookieOperator</code>](#CookieOperator)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| key | <code>string</code> | cookie的名字. |
-| [attributes] | <code>Object</code> | 参数对象. |
+| key | <code>string</code> | cookie name. |
+| [attributes] | <code>Object</code> | parameter object. |
 
 <a name="CookieOperator+removeAll"></a>
 
 ### cookieOperator.removeAll(keys, [attributes])
-删除某个cookie的值.
+Delete a set of cookies.
 
 **Kind**: instance method of [<code>CookieOperator</code>](#CookieOperator)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| keys | <code>string</code> | cookie名字数组. |
-| [attributes] | <code>Object</code> | 参数对象. |
+| keys | <code>string</code> | cookie keys. |
+| [attributes] | <code>Object</code> | parameter object. |
 
-<a name="CookieOperator+getPrimaryDomain"></a>
+<a name="CookieOperator+getTopDomain"></a>
 
-### cookieOperator.getPrimaryDomain([domain])
-获取主域名地址.
+### cookieOperator.getTopDomain([domain])
+Get a top-level domain.
 
 **Kind**: instance method of [<code>CookieOperator</code>](#CookieOperator)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| [domain] | <code>string</code> | 需要处理的域名. |
+| [domain] | <code>string</code> | Domain name to be processed. |
 
