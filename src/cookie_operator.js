@@ -1,34 +1,34 @@
 /**
  * @author Lucas
- * @description 一个操作cookie的类
+ * @description a class that manipulates cookies
  */
 class CookieOperator {
     /**
-     * 创建一个实例
-     * @param {Object} [attributes] - 参数对象.
+     * Create an instance
+     * @param {Object} [attributes] - Parameter object.
      */
     constructor(attributes = {}) {
         this.attributes = attributes
     }
 
     /**
-     * 使用自定义参数对象创建一个实例
-     * @param {Object} [attribute] - 实例参数对象.
+     * Create an instance with a custom parameter object
+     * @param {Object} [attribute] - parameter object.
      * */
     create(attribute) {
         return new CookieOperator(attribute)
     }
 
     /**
-     * 获取当前实例的参数
+     * Get the parameters of the current instance
      * */
     getAttr() {
         return this.attributes
     }
 
     /**
-     * 检测一组cookie是否都存在
-     * @param {string} keys - cookie名字数组.
+     * Check if a set of cookies are present
+     * @param {string} keys - cookies keys.
      * */
     checkAll(keys = []) {
         if (Object.keys(keys).length === 0) {
@@ -44,8 +44,8 @@ class CookieOperator {
     }
 
     /**
-     * 读取某个cookie的值.
-     * @param {string} key - cookie的名字.
+     * Get the value of a cookie.
+     * @param {string} key - cookie name.
      */
     get(key) {
         let _key = encodeURIComponent(String(key));
@@ -64,11 +64,11 @@ class CookieOperator {
     }
 
     /**
-     * 设置某个cookie的值.
-     * @param {string} key - cookie的名字.
-     * @param {string} value - cookie的值.
-     * @param {Object} [attributes] - 参数对象.
-     * @return {String} 当前文档的cookie字符串
+     * Set the value of a cookie.
+     * @param {string} key - cookie name.
+     * @param {string} value - cookie value.
+     * @param {Object} [attributes] - parameter object.
+     * @return {String} The current document's cookie string.
      */
     set(key, value, attributes = this.attributes) {
         let { expires, path } = attributes;
@@ -106,9 +106,9 @@ class CookieOperator {
     }
 
     /**
-     * 删除某个cookie的值.
-     * @param {string} key - cookie的名字.
-     * @param {Object} [attributes] - 参数对象.
+     * Delete a cookie.
+     * @param {string} key - cookie name.
+     * @param {Object} [attributes] - parameter object.
      */
     remove(key, attributes = this.attributes) {
         let value = '';
@@ -118,9 +118,9 @@ class CookieOperator {
     }
 
     /**
-     * 删除一组cookie的值.
-     * @param {string} keys - cookie名字数组.
-     * @param {Object} [attributes] - 参数对象.
+     * Delete a set of cookies.
+     * @param {string} keys - cookie keys.
+     * @param {Object} [attributes] - parameter object.
      */
     removeAll(keys = [], attributes = this.attributes) {
         keys.forEach(name => {
@@ -129,10 +129,10 @@ class CookieOperator {
     }
 
     /**
-     * 获取主域名地址.
-     * @param {string} [domain] - 需要处理的域名.
+     * Get a top-level domain.
+     * @param {string} [domain] - Domain name to be processed.
      */
-    getPrimaryDomain(domain) {
+    getTopDomain(domain) {
         let _domain = domain || document.domain;
         // 删除三级域名
         return _domain.substring(_domain.length, _domain.lastIndexOf('.', _domain.lastIndexOf('.') - 1) + 1);
