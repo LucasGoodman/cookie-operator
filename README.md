@@ -27,7 +27,7 @@ Download the script [here](https://cdn.jsdelivr.net/npm/cookie-operator@1.1.0/sr
 Or include it via [jsDelivr CDN](https://www.jsdelivr.com/package/npm/cookie-operator):
 
 ```
-<script src="https://cdn.jsdelivr.net/npm/cookie-operator@1.0.1/dist/cookieOperator.1.0.1.js">
+<script src="https://cdn.jsdelivr.net/npm/cookie-operator@1.2.1/dist/cookieOperator.mini.js">
 ```
 
 <a name="BasicUsage"></a>

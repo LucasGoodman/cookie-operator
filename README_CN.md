@@ -26,7 +26,7 @@ Translations: [English](https://github.com/LucasGoodman/cookie-operator/blob/mas
 或者使用CDN方式 [jsDelivr CDN](https://www.jsdelivr.com/package/npm/cookie-operator):
 
 ```
-<script src="https://cdn.jsdelivr.net/npm/cookie-operator@1.0.1/dist/cookieOperator.1.0.1.js">
+<script src="https://cdn.jsdelivr.net/npm/cookie-operator@1.2.1/dist/cookieOperator.mini.js">
 ```
 <a name="BasicUsage"></a>
 ## [使用](#BasicUsage)
