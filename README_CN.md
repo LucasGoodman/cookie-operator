@@ -95,7 +95,7 @@ cookieOperator.getTopDomain('www.test2.com') // 'test2.com'
 
 *注意！* 除非您依赖于[Cookie默认属性](#CookieAttributes)，否则在删除cookie时，必须传递用于设置cookie的完全相同的路径和域属性。
 
-创建一个覆盖cookie设置默认值的实例 [create](https://github.com/LucasGoodman/cookie-operator/blob/master/doc/index.md#CookieOperator+create)：
+创建([Create](https://github.com/LucasGoodman/cookie-operator/blob/master/doc/index.md#CookieOperator+create))一个覆盖cookie设置默认值的实例：
 ```javascript
 let testAttr = {
         expires: 1,
@@ -103,7 +103,7 @@ let testAttr = {
         path: '/a',
         secure: true
     };
-    let _cookieOperator = cookieOperator.create(testAttr)
+let _cookieOperator = cookieOperator.create(testAttr)
 ```
 
 <a name="API"></a>

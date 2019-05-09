@@ -97,7 +97,7 @@ cookieOperator.getTopDomain('www.test2.com') // 'test2.com'
 
 *IMPORTANT!* when deleting a cookie, you must pass the exact same path and domain attributes that was used to set the cookie, unless you're relying on the  [default attributes](#CookieAttributes).
 
-Create an instance that overrides the default value of the cookie setting [create](https://github.com/LucasGoodman/cookie-operator/blob/master/doc/index.md#CookieOperator+create)：
+[Create](https://github.com/LucasGoodman/cookie-operator/blob/master/doc/index.md#CookieOperator+create) an instance that overrides the default value of the cookie setting ：
 ```javascript
 let testAttr = {
         expires: 1,
@@ -105,7 +105,7 @@ let testAttr = {
         path: '/a',
         secure: true
     };
-    let _cookieOperator = cookieOperator.create(testAttr)
+let _cookieOperator = cookieOperator.create(testAttr)
 ```
 
 <a name="API"></a>
