@@ -8,6 +8,7 @@
 
 Translations: [English](https://github.com/LucasGoodman/cookie-operator/blob/master/README.md)
 
+<a name="Installation"></a>
 ## [安装](#Installation)
 **npm install**
  ```
@@ -27,22 +28,22 @@ Translations: [English](https://github.com/LucasGoodman/cookie-operator/blob/mas
 ```
 <script src="https://cdn.jsdelivr.net/npm/cookie-operator@1.0.1/dist/cookieOperator.1.0.1.js">
 ```
-
+<a name="BasicUsage"></a>
 ## [使用](#BasicUsage)
 
-创建一个当前站点可以用访问的cookie:
+创建一个当前站点可以用访问的cookie：
 
 ```javascript
 cookieOperator.set('name', 'value');
 ```
 
-创建一个当前站点可以访问且有效期为30天的cookie:
+创建一个当前站点可以访问且有效期为30天的cookie：
 
 ```javascript
 cookieOperator.set('name', 'value',{ expires:30, path:'', domain:document.domain});
 ```
 
-读取cookie:
+读取cookie：
 
 ```javascript
 cookieOperator.set('name', 'value');
@@ -59,19 +60,19 @@ cookieOperator.get('name'); // => 'value'
 cookieOperator.get('otherName'); // => 'undefined'
 ```
 
-根据cookie名字删除cookie:
+根据cookie名字删除cookie：
 
 ```javascript
 cookieOperator.remove('name'); 
 ```
 
-根据cookie名字数组批量删除cookie:
+根据cookie名字数组批量删除cookie：
 
 ```
 cookieOperator.removeAll(['name1','name2','name3'...]); 
 ```
 
-删除在当前路径下的cookie:
+删除在当前路径下的cookie：
 
 ```javascript
 cookieOperator.set('name', 'value', { path: '' });
@@ -79,26 +80,40 @@ cookieOperator.remove('name'); // fail!
 cookieOperator.remove('name', { path: '' }); // removed!
 ```
 
-获取当前站点的主域名:
+获取当前站点的顶级域名：
 ```javascript
 // 'www.test.com'
-cookieOperator.getPrimaryDomain(); // 'test.com'
+cookieOperator.getTopDomain(); // 'test.com'
 // 'name1.name2.test.com'
-cookieOperator.getPrimaryDomain(); // 'test.com'
+cookieOperator.getTopDomain(); // 'test.com'
 ```
 
-根据给出的域名获取主域名:
+根据给出的域名获取主域名：
 ```javascript
-cookieOperator.getPrimaryDomain('www.test2.com') // 'test2.com'
+cookieOperator.getTopDomain('www.test2.com') // 'test2.com'
 ```
-
 
 *注意！* 除非您依赖于[Cookie默认属性](#CookieAttributes)，否则在删除cookie时，必须传递用于设置cookie的完全相同的路径和域属性。
 
+创建一个覆盖cookie设置默认值的实例 [create](https://github.com/LucasGoodman/cookie-operator/blob/master/doc/index.md#CookieOperator+create)：
+```javascript
+let testAttr = {
+        expires: 1,
+        domain: 'test.com',
+        path: '/a',
+        secure: true
+    };
+    let _cookieOperator = cookieOperator.create(testAttr)
+```
+
+<a name="API"></a>
+## [API](#API)
+[API文档](https://github.com/LucasGoodman/cookie-operator/blob/master/doc/index.md)
+
+<a name="CookieAttributes"></a>
 ## [Cookie属性](#CookieAttributes)
 
 `cookieOperator.set(...)`函数的最后一个参数是一个对象，这个对象包含了几个控制cookie的属性。如果不传入将使用默认值，如果传入则会覆盖默认值。有关cookie的更多资料可以参考：[Document.cookie](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie) 。
-
 
 **expires**
 

@@ -9,6 +9,7 @@ Used to manipulate cookies for JavaScript
 
 Translations: [中文](https://github.com/LucasGoodman/cookie-operator/blob/master/README_CN.md)
 
+<a name="Installation"></a>
 ## [Installation](#Installation)
 **npm install**
  ```
@@ -29,6 +30,7 @@ Or include it via [jsDelivr CDN](https://www.jsdelivr.com/package/npm/cookie-ope
 <script src="https://cdn.jsdelivr.net/npm/cookie-operator@1.0.1/dist/cookieOperator.1.0.1.js">
 ```
 
+<a name="BasicUsage"></a>
 ## [Basic Usage](#BasicUsage)
 
 Create a cookie, valid across the entire site:
@@ -83,21 +85,35 @@ cookieOperator.remove('name', { path: '' }); // removed!
 Get the current primary domain name:
 ```javascript
 // 'www.test.com'
-cookieOperator.getPrimaryDomain(); // 'test.com'
+cookieOperator.getTopDomain(); // 'test.com'
 // 'name1.name2.test.com'
-cookieOperator.getPrimaryDomain(); // 'test.com'
+cookieOperator.getTopDomain(); // 'test.com'
 ```
 
 Get the primary domain name based on the given domain name:
 ```javascript
-cookieOperator.getPrimaryDomain('www.test2.com') // 'test2.com'
+cookieOperator.getTopDomain('www.test2.com') // 'test2.com'
 ```
-
 
 *IMPORTANT!* when deleting a cookie, you must pass the exact same path and domain attributes that was used to set the cookie, unless you're relying on the  [default attributes](#CookieAttributes).
 
-## [Cookie Attributes](#CookieAttributes)
+Create an instance that overrides the default value of the cookie setting [create](https://github.com/LucasGoodman/cookie-operator/blob/master/doc/index.md#CookieOperator+create)：
+```javascript
+let testAttr = {
+        expires: 1,
+        domain: 'test.com',
+        path: '/a',
+        secure: true
+    };
+    let _cookieOperator = cookieOperator.create(testAttr)
+```
 
+<a name="API"></a>
+## [API](#API)
+[API document](https://github.com/LucasGoodman/cookie-operator/blob/master/doc/index.md)
+
+<a name="CookieAttributes"></a>
+## [Cookie Attributes](#CookieAttributes)
 
 The last parameter of a function `cookieOperator.set(...)` is an object, which has several properties that control the cookie.
 If you pass in these parameters, the default properties will be overwritten.
