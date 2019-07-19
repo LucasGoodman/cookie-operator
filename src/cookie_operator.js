@@ -71,38 +71,39 @@ class CookieOperator {
      * @return {String} The current document's cookie string.
      */
     set(key, value, attributes = this.attributes) {
-        let { expires, path } = attributes;
+        let _attributes = Object.assign({}, attributes);
+        let { expires, path } = _attributes;
         // 0.转义
         let _key = encodeURIComponent(String(key));
         let _value = encodeURIComponent(String(value));
         // 1.特殊处理超时时间
         if (typeof expires === 'number') {
             let _expires = new Date();
-            _expires.setMilliseconds(_expires.getMilliseconds() + expires * 864e+5);
-            attributes.expires = _expires.toGMTString();
+            _expires.setMilliseconds(_expires.getMilliseconds() + expires * 864e5);
+            _attributes.expires = _expires.toGMTString();
         } else if (expires instanceof Date) {
-            attributes.expires = expires.toGMTString();
+            _attributes.expires = expires.toGMTString();
         } else {
-            attributes.expires = '';
+            _attributes.expires = '';
         }
 
         // 2.path默认值
-        attributes.path = path ? path : '/';
+        _attributes.path = path ? path : '/';
 
         // 3.拼接cookie字符串
         let stringifiedAttributes = '';
-        for (let attributeName in attributes) {
-            if (!attributes[attributeName]) {
+        for (let attributeName in _attributes) {
+            if (!_attributes[attributeName]) {
                 continue;
             }
             stringifiedAttributes += '; ' + attributeName;
-            if (attributes[attributeName] === true) {
+            if (_attributes[attributeName] === true) {
                 continue;
             }
-            stringifiedAttributes += '=' + attributes[attributeName];
+            stringifiedAttributes += '=' + _attributes[attributeName];
         }
         document.cookie = _key + '=' + _value + stringifiedAttributes;
-        return document.cookie
+        return document.cookie;
     }
 
     /**
