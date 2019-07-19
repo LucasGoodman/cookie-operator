@@ -113,9 +113,9 @@ class CookieOperator {
      */
     remove(key, attributes = this.attributes) {
         let value = '';
-        return this.set(key, value, Object.assign(attributes, {
+        Object.assign({}, attributes, {
             expires: -1
-        }));
+        })
     }
 
     /**
