@@ -139,9 +139,18 @@ class CookieOperator {
      */
     getTopDomain(domain) {
         let _domain = domain || document.domain;
-        // 删除三级域名
-        return _domain.substring(_domain.length, _domain.lastIndexOf('.', _domain.lastIndexOf('.') - 1) + 1);
+        if (isIP(_domain)) {
+            return _domain
+        } else {
+            // 删除三级域名
+            return _domain.substring(_domain.length, _domain.lastIndexOf('.', _domain.lastIndexOf('.') - 1) + 1);
+        }
     }
+}
+
+function isIP(ip) {
+    let ipRegExp = /^((25[0-5]|2[0-4]\d|1?\d?\d)\.){3}(25[0-5]|2[0-4]\d|1?\d?\d)$/;
+    return ipRegExp.test(ip)
 }
 
 let cookieOperator = new CookieOperator();
